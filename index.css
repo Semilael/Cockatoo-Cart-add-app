@@ -13,6 +13,25 @@ html, body {
     margin: 30px auto;
 }
 
+.loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader img {
+    width: 200px;
+    height: auto;
+    animation: spin 2s linear infinite;
+}
+
 img {
     width: 150px;
     margin: 0 auto;
@@ -45,6 +64,7 @@ button:hover {
     filter: brightness(90%);
     transition: opacity 0.3s ease;
 }
+
 button:active {
     filter: brightness(80%);
     transition: opacity 0.15s ease;
@@ -79,7 +99,7 @@ ul li .check-icon {
     left: 5px;
 }
 
-ul li .delete-icon{
+ul li .delete-icon {
     position: absolute;
     right: 5px;
 }
@@ -101,6 +121,7 @@ ul li:hover .check-icon,
 ul li:hover .delete-icon {
     opacity: 1;
 }
+
 /* ul li::before {
     content: "✓";
     position: absolute;
@@ -154,9 +175,3 @@ ul li span.delete-icon {
     transform: translateY(-50%);
     opacity: 0;
 } */
-
-
-
-
-
-

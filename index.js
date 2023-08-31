@@ -5,6 +5,10 @@ const appSettings = {
     databaseURL: "https://playground-cart-list-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
+window.addEventListener("load", function () {
+    showLoader();
+});
+
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shoppingList")
@@ -13,25 +17,26 @@ const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
-addButtonEl.addEventListener("click", function() {
+addButtonEl.addEventListener("click", function () {
     let inputValue = inputFieldEl.value
-    
+
     push(shoppingListInDB, inputValue)
-    
+
     clearInputFieldEl()
 })
 
-onValue(shoppingListInDB, function(snapshot) {
+onValue(shoppingListInDB, function (snapshot) {
     if (snapshot.exists()) {
+        hideLoader();
         let itemsArray = Object.entries(snapshot.val())
-    
+
         clearShoppingListEl()
-        
+
         for (let i = 0; i < itemsArray.length; i++) {
             let currentItem = itemsArray[i]
-            
+
             appendItemToShoppingListEl(currentItem)
-        }    
+        }
     } else {
         shoppingListEl.innerHTML = "No items here... yet"
     }
@@ -48,10 +53,10 @@ function clearInputFieldEl() {
 function appendItemToShoppingListEl(item) {
     let itemID = item[0]
     let itemValue = item[1]
-    
+
     let newEl = document.createElement("li")
     newEl.textContent = itemValue
-    
+
     let checkIcon = document.createElement("span");
     checkIcon.innerHTML = "✓";
     checkIcon.className = "check-icon";
@@ -63,7 +68,7 @@ function appendItemToShoppingListEl(item) {
     newEl.appendChild(checkIcon);
     newEl.appendChild(deleteIcon);
 
-    newEl.addEventListener("click", function(event) {
+    newEl.addEventListener("click", function (event) {
         if (event.target === checkIcon) {
             newEl.classList.toggle("checked");
         } else if (event.target === deleteIcon) {
@@ -71,11 +76,17 @@ function appendItemToShoppingListEl(item) {
             remove(exactLocationOfItemInDB);
         }
     });
-    // newEl.addEventListener("click", function() {
-    //     let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
-        
-    //     remove(exactLocationOfItemInDB)
-    // })
-    
+
     shoppingListEl.append(newEl)
+
+}
+
+function showLoader() {
+    const loader = document.querySelector(".loader");
+    loader.style.display = "flex";
+}
+
+function hideLoader() {
+    const loader = document.querySelector(".loader");
+    loader.style.display = "none";
 }
