@@ -1,0 +1,162 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #f9f9a7;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: 30px auto;
+}
+
+img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+input {
+    color: #432000;
+    background-color: #DCE1EB;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
+    margin: 10px 0;
+}
+
+button {
+    color: #FDFDFD;
+    background-color: #ac8048;
+    border: 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
+}
+
+button:hover {
+    filter: brightness(90%);
+    transition: opacity 0.3s ease;
+}
+button:active {
+    filter: brightness(80%);
+    transition: opacity 0.15s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    font-size: 20px;
+    background-color: #777872;
+    color: #fff5e6;
+    padding: 15px 30px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+ul li .check-icon {
+    position: absolute;
+    left: 5px;
+}
+
+ul li .delete-icon{
+    position: absolute;
+    right: 5px;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: rgb(67, 63, 55);
+}
+
+ul li .check-icon,
+ul li .delete-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+ul li:hover .check-icon,
+ul li:hover .delete-icon {
+    opacity: 1;
+}
+/* ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+ul li::after {
+    content: "✕";
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+ul li:hover::before,
+ul li:checked::before {
+    opacity: 1;
+    left: 5px;
+    cursor: pointer;
+}
+
+ul li:hover::after,
+ul li:checked::after {
+    opacity: 1;
+    right: 5px;
+    cursor: pointer;
+}
+
+ul li span.check-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+ul li.checked span.check-icon {
+    opacity: 1;
+}
+
+ul li span.delete-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+} */
+
+
+
+
+
+
