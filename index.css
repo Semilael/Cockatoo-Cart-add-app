@@ -4,6 +4,7 @@ html, body {
     font-family: 'Playfair Display', serif;
     background-color: #f9f9a7;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .container {
@@ -29,7 +30,6 @@ html, body {
 .loader img {
     width: 200px;
     height: auto;
-    animation: spin 2s linear infinite;
 }
 
 img {
@@ -121,57 +121,3 @@ ul li:hover .check-icon,
 ul li:hover .delete-icon {
     opacity: 1;
 }
-
-/* ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-ul li::after {
-    content: "✕";
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-ul li:hover::before,
-ul li:checked::before {
-    opacity: 1;
-    left: 5px;
-    cursor: pointer;
-}
-
-ul li:hover::after,
-ul li:checked::after {
-    opacity: 1;
-    right: 5px;
-    cursor: pointer;
-}
-
-ul li span.check-icon {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-}
-
-ul li.checked span.check-icon {
-    opacity: 1;
-}
-
-ul li span.delete-icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-} */
