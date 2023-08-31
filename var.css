@@ -1,0 +1,10 @@
+
+:root {
+  --page-bg-color: #ffface;
+  --page-light-text-color: #FDFDFD;
+  --btn-bg-color: #795548;
+  --input-text-inactive: var(--btn-bg-color);
+  --input-bg-color: #DCE1EB;
+  --list-el-bg-color: #646464;
+  --list-text-inactive: #433f37;
+}

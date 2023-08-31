@@ -1,8 +1,10 @@
+@import "var.css";
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Playfair Display', serif;
-    background-color: #f9f9a7;
+    background-color: var(--page-bg-color);
     box-sizing: border-box;
     user-select: none;
 }
@@ -38,8 +40,8 @@ img {
 }
 
 input {
-    color: #432000;
-    background-color: #DCE1EB;
+    color: var(--input-text-inactive);
+    background-color: var(--input-bg-color);
     border: 0;
     outline: none;
     padding: 15px;
@@ -51,8 +53,8 @@ input {
 }
 
 button {
-    color: #FDFDFD;
-    background-color: #ac8048;
+    color: var(--page-light-text-color);
+    background-color: var(--btn-bg-color);
     border: 0;
     padding: 15px;
     border-radius: 8px;
@@ -85,8 +87,8 @@ ul li {
     justify-content: center;
     word-break: break-word;
     font-size: 20px;
-    background-color: #777872;
-    color: #fff5e6;
+    background-color: var(--list-el-bg-color);
+    color: var(--page-light-text-color);
     padding: 15px 30px;
     border-radius: 8px;
     flex-grow: 1;
@@ -107,7 +109,7 @@ ul li .delete-icon {
 
 ul li.checked {
     text-decoration: line-through;
-    color: rgb(67, 63, 55);
+    color: var(--list-text-inactive);
 }
 
 ul li .check-icon,
