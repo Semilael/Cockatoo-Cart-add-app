@@ -6,7 +6,8 @@ const appSettings = {
 }
 
 window.addEventListener("load", function () {
-    showLoader();
+    showLoader()
+    this.setTimeout(() => {hideLoader()}, 600)
 });
 
 const app = initializeApp(appSettings)
@@ -26,8 +27,8 @@ addButtonEl.addEventListener("click", function () {
 })
 
 onValue(shoppingListInDB, function (snapshot) {
+    // hideLoader()
     if (snapshot.exists()) {
-        hideLoader();
         let itemsArray = Object.entries(snapshot.val())
 
         clearShoppingListEl()
@@ -61,19 +62,19 @@ function appendItemToShoppingListEl(item) {
     checkIcon.innerHTML = "✓";
     checkIcon.className = "check-icon";
 
-    let deleteIcon = document.createElement("span");
-    deleteIcon.innerHTML = "✕";
-    deleteIcon.className = "delete-icon";
+    let deleteIcon = document.createElement("span")
+    deleteIcon.innerHTML = "✕"
+    deleteIcon.className = "delete-icon"
 
-    newEl.appendChild(checkIcon);
-    newEl.appendChild(deleteIcon);
+    newEl.appendChild(checkIcon)
+    newEl.appendChild(deleteIcon)
 
     newEl.addEventListener("click", function (event) {
         if (event.target === checkIcon) {
-            newEl.classList.toggle("checked");
+            newEl.classList.toggle("checked")
         } else if (event.target === deleteIcon) {
-            let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
-            remove(exactLocationOfItemInDB);
+            let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
+            remove(exactLocationOfItemInDB)
         }
     });
 
@@ -82,11 +83,11 @@ function appendItemToShoppingListEl(item) {
 }
 
 function showLoader() {
-    const loader = document.querySelector(".loader");
-    loader.style.display = "flex";
+    const loader = document.querySelector(".loader")
+    loader.style.display = "flex"
 }
 
 function hideLoader() {
-    const loader = document.querySelector(".loader");
-    loader.style.display = "none";
+    const loader = document.querySelector(".loader")
+    loader.style.display = "none"
 }
