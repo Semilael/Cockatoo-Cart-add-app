@@ -39,6 +39,13 @@ img {
     margin: 0 auto;
 }
 
+.info{
+    text-align: center;
+    margin: 20px;
+    font-size: 24px;
+    color: var(--page-text-color);
+}
+
 input {
     color: var(--input-text-inactive);
     background-color: var(--input-bg-color);
@@ -71,6 +78,11 @@ button:hover {
 button:active {
     filter: brightness(80%);
     transition: opacity 0.15s ease;
+}
+
+.color-change{
+    background-color: red; 
+    transition: background-color 1s ease;
 }
 
 ul {

@@ -19,15 +19,18 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function () {
-    let inputValue = inputFieldEl.value
+    let inputValue = inputFieldEl.value.trim();
 
-    push(shoppingListInDB, inputValue)
+    if (inputValue !== ""){
+        push(shoppingListInDB, inputValue)
+    } else {
+        errorBtnColor(this)
+    }
 
     clearInputFieldEl()
 })
 
 onValue(shoppingListInDB, function (snapshot) {
-    // hideLoader()
     if (snapshot.exists()) {
         let itemsArray = Object.entries(snapshot.val())
 
@@ -90,4 +93,13 @@ function showLoader() {
 function hideLoader() {
     const loader = document.querySelector(".loader")
     loader.style.display = "none"
+}
+
+function errorBtnColor(btn){
+    btn.addEventListener("click", function() {
+        this.classList.add("color-change");
+        setTimeout(function() {
+          btn.classList.remove("color-change");
+        }, 1000);
+      });
 }
